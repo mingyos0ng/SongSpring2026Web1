@@ -1,0 +1,110 @@
+/* BEGIN border-box fix */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* END border-box fix */
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("images/grass.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Libre Franklin', Arial, sans-serif;
+    color: #2a2a2a;
+}
+
+/* Grouping example */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Inter', Arial, sans-serif;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.wrapper {
+    background: rgb(187, 215, 153); /* your color */
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    width: 80%;
+    margin: 30px auto;
+}
+
+header {
+    background-color: #a9c48a;
+    grid-column: 1 / 13;
+    text-align: center;
+}
+
+nav {
+    background-color: #cddfbf;
+    grid-column: 1 / 4;
+}
+
+main {
+    background-color: #ffffff;
+    grid-column: 4 / 10;
+    text-align: center;
+}
+
+aside {
+    background-color: #e9e0cf;
+    grid-column: 10 / 13;
+}
+
+/* span 2 rows */
+main,
+nav,
+aside {
+  grid-row: 2 / 4;
+}
+
+footer {
+    background-color: #a9c48a;
+    grid-column: 1 / 13;
+    text-align: center;
+}
+
+/* padding on immediate children of wrapper */
+.wrapper > * {
+  padding: 20px;
+}
+
+/* links */
+a {
+    text-decoration: none;
+    color: #2a2a2a;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* images */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* nav list cleanup */
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
