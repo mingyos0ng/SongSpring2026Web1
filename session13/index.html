@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Project Proposal</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f5f2;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 50px 30px;
+      text-align: center;
+      background-color: #e2e2e2;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 42px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #5d634f;
+    }
+
+    main {
+      width: 80%;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 15px;
+      border: none;
+      background-color: #5d634f;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #4b503f;
+    }
+
+    .section-content {
+      display: none;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: white;
+      border-left: 5px solid #5d634f;
+      border-radius: 8px;
+    }
+
+    .window-section {
+      margin: 40px 0;
+      padding: 30px;
+      background-color: white;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    #windowPane {
+      width: 320px;
+      height: 220px;
+      margin: 20px auto;
+      border: 12px solid #5d634f;
+      border-radius: 6px;
+      background: linear-gradient(#1b263b, #415a77);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .window-line-vertical {
+      position: absolute;
+      width: 6px;
+      height: 100%;
+      background-color: #5d634f;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .window-line-horizontal {
+      position: absolute;
+      height: 6px;
+      width: 100%;
+      background-color: #5d634f;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.9;
+      z-index: 1;
+    }
+
+    .petal {
+      width: 18px;
+      height: 10px;
+      background-color: #f4b6c2;
+      border-radius: 50%;
+    }
+
+    .firefly {
+      width: 8px;
+      height: 8px;
+      background-color: #f6f7a1;
+      box-shadow: 0 0 12px #f6f7a1;
+    }
+
+    .leaf {
+      width: 18px;
+      height: 10px;
+      background-color: #bc6c25;
+      border-radius: 50% 0 50% 0;
+    }
+
+    #sceneText {
+      font-size: 18px;
+      color: #5d634f;
+      margin-top: 15px;
+    }
+
+    .season-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .season-buttons button {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: 500px;
+      margin: 20px auto;
+      border: 2px solid #e2e2e2;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Final Project Proposal</h1>
+    <p>An interactive website based around one window pane and three seasonal environments.</p>
+  </header>
+
+  <main>
+
+    <section class="window-section">
+      <h2>Window Pane Concept</h2>
+      <p>
+        My final website will have a home page and three connected pages.
+        Each page will show the same window pane, but the environment outside the window will change according to each season (Spring, Summer, Fall).
+      </p>
+
+      <div id="windowPane">
+        <div class="particle firefly" style="left: 60px; top: 70px;"></div>
+        <div class="particle firefly" style="left: 190px; top: 110px;"></div>
+        <div class="particle firefly" style="left: 250px; top: 50px;"></div>
+
+        <div class="window-line-vertical"></div>
+        <div class="window-line-horizontal"></div>
+      </div>
+
+      <p id="sceneText">Current scene: Summer Fireflies</p>
+
+      <div class="season-buttons">
+        <button id="springBtn">Spring Petals</button>
+        <button id="summerBtn">Summer Fireflies</button>
+        <button id="autumnBtn">Autumn Leaves</button>
+      </div>
+    </section>
+
+    <button class="toggle-btn" data-target="#theme">Theme</button>
+    <div id="theme" class="section-content">
+      <h2>Theme</h2>
+      <p>
+        My final website will be about looking through one window at  different seasonal environments.
+        The window stays the same, but the scene outside changes through color, movement, and overall atmosphere.
+      </p>
+    </div>
+
+    <button class="toggle-btn" data-target="#description">Website Description</button>
+    <div id="description" class="section-content">
+      <h2>Website Description</h2>
+      <p>
+        The final website will have one home page and three idea pages: spring petals, summer fireflies,
+        and autumn leaves. Each page will use the same window pane structure, but the visual mood will change.
+        The spring page will show falling petals, the summer page will show glowing fireflies, and the autumn page
+        will show drifting leaves.
+        I chose to not incorporate winter, as the final project is limited to three pages—I felt that spring, summer, and autumn had the potential to be visually distinct.
+      </p>
+    </div>
+
+    <button class="toggle-btn" data-target="#pages">Page Plan</button>
+    <div id="pages" class="section-content">
+      <h2>Page Plan</h2>
+      <p>
+        The home page will introduce the overall window concept. The spring page will focus on soft petals and lighter colors.
+        The summer page will focus on a darker nighttime scene with fireflies. The autumn page will use warmer colors
+        and animated leaves.
+      </p>
+    </div>
+
+    <button class="toggle-btn" data-target="#fonts">Fonts</button>
+    <div id="fonts" class="section-content">
+      <h2>Fonts</h2>
+      <p>
+        I want to use clean and readable fonts. For the headings, I may use a softer or slightly rounded font
+        to match the calm and visual feeling of the website. For body text, I will use a simple sans-serif font. Like my midterm project, I am considering using a different font for each season/page.
+      </p>
+    </div>
+
+    <button class="toggle-btn" data-target="#colors">Colors</button>
+    <div id="colors" class="section-content">
+      <h2>Colors</h2>
+      <p>
+        The colors will change depending on the seasonal page. Spring may use soft pinks and pale greens,
+        summer may use blues and yellows, and autumn may use oranges and browns.
+        The overall site will stay simple so the window scenes can stand out.
+      </p>
+    </div>
+
+    <button class="toggle-btn" data-target="#javascript">JavaScript Element</button>
+    <div id="javascript" class="section-content">
+      <h2>JavaScript Element</h2>
+      <p>
+        The JavaScript element will help make the website interactive. The user may be able to click or move the mouse
+        to affect the movement of petals, fireflies, or leaves. Each page may have a small interactive detail connected
+        to its season.
+      </p>
+    </div>
+
+    <button class="toggle-btn" data-target="#p5">p5 Element</button>
+    <div id="p5" class="section-content">
+      <h2>p5 Element</h2>
+      <p>
+        Each seasonal page will include a p5.js sketch. The spring sketch may show petals falling,
+        the summer sketch may show fireflies glowing and moving, and the autumn sketch may show leaves drifting
+        across the window. I want the p5 sketch to be the main visual element of each page. I've included a p5.js sketch of the fifreflies from a previous assignent.
+      </p>
+
+      <iframe src="https://editor.p5js.org/minsong/full/GFLhrkuSQ"></iframe>
+    </div>
+
+    <button class="toggle-btn" data-target="#jquery">jQuery Element</button>
+    <div id="jquery" class="section-content">
+      <h2>jQuery Element</h2>
+      <p>
+        I will use jQuery to reveal and hide sections with slideToggle().
+        I will also use jQuery to change the sample window scene by updating the background, particles, and text.
+        This connects to the class examples because jQuery can be used for events, effects, CSS changes,
+        and DOM manipulation.
+      </p>
+    </div>
+
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      $(".toggle-btn").click(function() {
+        let target = $(this).attr("data-target");
+        $(target).slideToggle("slow");
+      });
+
+      $("#springBtn").click(function() {
+        $("#windowPane").hide().css({
+          "background": "linear-gradient(#bde0fe, #d8f3dc)"
+        }).fadeIn("slow");
+
+        $("#windowPane .particle").remove();
+
+        $("#windowPane").prepend(
+          '<div class="particle petal" style="left: 50px; top: 60px;"></div>' +
+          '<div class="particle petal" style="left: 160px; top: 110px;"></div>' +
+          '<div class="particle petal" style="left: 250px; top: 80px;"></div>'
+        );
+
+        $("#sceneText").text("Current scene: Spring petals");
+      });
+
+      $("#summerBtn").click(function() {
+        $("#windowPane").hide().css({
+          "background": "linear-gradient(#1b263b, #415a77)"
+        }).fadeIn("slow");
+
+        $("#windowPane .particle").remove();
+
+        $("#windowPane").prepend(
+          '<div class="particle firefly" style="left: 60px; top: 70px;"></div>' +
+          '<div class="particle firefly" style="left: 190px; top: 110px;"></div>' +
+          '<div class="particle firefly" style="left: 250px; top: 50px;"></div>'
+        );
+
+        $("#sceneText").text("Current scene: Summer fireflies");
+      });
+
+      $("#autumnBtn").click(function() {
+        $("#windowPane").hide().css({
+          "background": "linear-gradient(#dda15e, #6c584c)"
+        }).fadeIn("slow");
+
+        $("#windowPane .particle").remove();
+
+        $("#windowPane").prepend(
+          '<div class="particle leaf" style="left: 70px; top: 90px;"></div>' +
+          '<div class="particle leaf" style="left: 180px; top: 60px;"></div>' +
+          '<div class="particle leaf" style="left: 260px; top: 130px;"></div>'
+        );
+
+        $("#sceneText").text("Current scene: Autumn leaves");
+      });
+
+    });
+  </script>
+
+</body>
+</html>
