@@ -1,0 +1,466 @@
+/* global styles */
+
+body {
+  margin: 0;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  background-color: #f7f3ee;
+  color: #2a2522;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 60px 25px 35px;
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+h1,
+h2,
+nav a {
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: 85%;
+  max-width: 1050px;
+  margin: 50px auto;
+}
+
+/* navigation */
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background-color: #2a2522;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f7f3ee;
+  padding: 8px 14px;
+  border: 1px solid #f7f3ee;
+  border-radius: 999px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  background-color: #f7f3ee;
+  color: #2a2522;
+}
+
+/* home page */
+
+.home-page {
+  background-color: #f7f3ee;
+}
+
+.home-page header {
+  padding: 90px 25px 60px;
+  background: linear-gradient(135deg, #f8cbd6, #f4d28b, #a8d6ea);
+  border-bottom: 2px solid #2a2522;
+}
+
+.home-page header h1 {
+  font-size: 64px;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: #2a2522;
+}
+
+.home-page header p {
+  max-width: 620px;
+  margin: 18px auto 0;
+  color: #3a332f;
+  font-weight: 500;
+}
+
+.intro {
+  background-color: #fff9df;
+  padding: 36px;
+  margin-bottom: 36px;
+  border: 2px solid #2a2522;
+  border-radius: 18px;
+  box-shadow: 5px 5px 0 #2a2522;
+}
+
+.intro h2 {
+  margin-top: 0;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #243b8f;
+}
+
+.intro p {
+  font-size: 17px;
+  color: #3a332f;
+}
+
+#toggleIntro {
+  display: block;
+  margin: 0 0 36px 0;
+  padding: 12px 18px;
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2a2522;
+  background-color: #f8cbd6;
+  border: 2px solid #2a2522;
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 #2a2522;
+  cursor: pointer;
+}
+
+#toggleIntro:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #2a2522;
+  background-color: #fff9df;
+}
+
+/* season cards */
+
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.season-card {
+  display: block;
+  text-decoration: none;
+  color: #2a2522;
+  padding: 34px;
+  min-height: 190px;
+  border: 2px solid #2a2522;
+  box-shadow: 5px 5px 0 #2a2522;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.season-card h2 {
+  margin-top: 0;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.season-card p {
+  font-size: 16px;
+  max-width: 300px;
+}
+
+.season-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 #2a2522;
+}
+
+.spring-card {
+  background-color: #f8c6d4;
+  border-radius: 0 50px 0 0;
+}
+
+.spring-card h2 {
+  color: #8f3f55;
+}
+
+.summer-card {
+  background-color: #1b2b46;
+  color: #fff7c2;
+  border-radius: 50px 0 0 0;
+}
+
+.summer-card h2 {
+  color: #fff7c2;
+}
+
+.autumn-card {
+  background-color: #d8783c;
+  color: #fff8eb;
+  border-radius: 0 0 50px 0;
+}
+
+.autumn-card h2 {
+  color: #fff8eb;
+}
+
+.winter-card {
+  background-color: #a9d4ea;
+  color: #132238;
+  border-radius: 0 0 0 50px;
+}
+
+.winter-card h2 {
+  color: #132238;
+}
+
+/* season pages */
+
+.season-page {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.window-frame {
+  display: flex;
+  justify-content: center;
+}
+
+#sketch-holder {
+  width: 600px;
+  height: 400px;
+  border: 10px solid #2a2522;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 4px 4px 0 #2a2522;
+}
+
+/* makes the p5 canvas fit the window box */
+
+#sketch-holder canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.season-description {
+  background-color: #f9f9f6;
+  padding: 30px;
+  border: 2px solid #2a2522;
+  border-radius: 18px;
+  box-shadow: 5px 5px 0 #2a2522;
+}
+
+.season-description h2 {
+  margin-top: 0;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.season-description p {
+  font-size: 17px;
+}
+
+/* spring page */
+
+.spring-page {
+  background-color: #f9e4ea;
+  color: #3a2a2f;
+}
+
+.spring-page header {
+  background: linear-gradient(135deg, #ffd7e3, #f9efe7);
+  border-bottom: 2px solid #2a2522;
+}
+
+.spring-page header h1,
+.spring-page .season-description h2 {
+  font-family: "Lavishly Yours", cursive;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.spring-page header h1 {
+  font-size: 82px;
+  color: #9f5066;
+}
+
+.spring-page header p {
+  color: #6f4b58;
+}
+
+.spring-page .season-description {
+  background-color: #fff8fa;
+  color: #3a2a2f;
+}
+
+.spring-page .season-description h2 {
+  font-size: 54px;
+  color: #b05c75;
+}
+
+/* summer page */
+
+.summer-page {
+  background-color: #101b2a;
+  color: #f7f3ee;
+}
+
+.summer-page header {
+  background: linear-gradient(135deg, #101b2a, #1b4332);
+  border-bottom: 2px solid #f7f3ee;
+}
+
+.summer-page header h1,
+.summer-page .season-description h2 {
+  font-family: "Barlow Condensed", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.summer-page header h1 {
+  font-size: 64px;
+  color: #fff7c2;
+}
+
+.summer-page header p {
+  color: #d8e6c3;
+}
+
+.summer-page .season-description {
+  background-color: #fff5c7;
+  color: #14213d;
+}
+
+.summer-page .season-description h2 {
+  color: #1b4332;
+}
+
+/* autumn page */
+
+.autumn-page {
+  background-color: #d88954;
+  color: #3b2417;
+}
+
+.autumn-page header {
+  background: linear-gradient(135deg, #f2c38b, #d88954);
+  border-bottom: 2px solid #2a2522;
+}
+
+.autumn-page header h1,
+.autumn-page .season-description h2 {
+  font-family: "Fraunces", Georgia, serif;
+  text-transform: none;
+  letter-spacing: -1px;
+}
+
+.autumn-page header h1 {
+  font-size: 62px;
+  color: #5c2e12;
+}
+
+.autumn-page header p {
+  color: #5c2e12;
+}
+
+.autumn-page .season-description {
+  background-color: #fff0dc;
+  color: #3b2417;
+}
+
+.autumn-page .season-description h2 {
+  color: #7c2d12;
+}
+
+/* winter page */
+
+.winter-page {
+  background-color: #e6f0f6;
+  color: #132238;
+}
+
+.winter-page header {
+  background: linear-gradient(135deg, #eef8fc, #b7cad9);
+  border-bottom: 2px solid #2a2522;
+}
+
+.winter-page header h1,
+.winter-page .season-description h2 {
+  font-family: "Syne Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.winter-page header h1 {
+  font-size: 58px;
+  color: #132238;
+}
+
+.winter-page header p {
+  color: #314d68;
+}
+
+.winter-page .season-description {
+  background-color: #f7fbfd;
+  color: #132238;
+}
+
+.winter-page .season-description h2 {
+  color: #2a4160;
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 14px;
+  background-color: #2a2522;
+  color: #f7f3ee;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* responsive styles */
+
+@media (max-width: 800px) {
+  .season-grid,
+  .season-page {
+    grid-template-columns: 1fr;
+  }
+
+  #sketch-holder {
+    width: 90vw;
+    height: 60vw;
+    max-width: 600px;
+    max-height: 400px;
+    border: 8px solid #2a2522;
+    border-radius: 18px;
+  }
+
+  header h1,
+  .home-page header h1,
+  .spring-page header h1,
+  .summer-page header h1,
+  .autumn-page header h1,
+  .winter-page header h1 {
+    font-size: 42px;
+  }
+
+  .spring-page .season-description h2 {
+    font-size: 42px;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  .intro,
+  .season-card,
+  .season-description {
+    padding: 26px;
+  }
+}
